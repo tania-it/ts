@@ -1,23 +1,24 @@
-const mainEl = document.getElementById ('main');
-const spanCollection = mainEl 
-? Array.from(mainEl.querySelectorAll<HTMLElement>('[data-color]'))
-:[];
+const mainEl = document.getElementById('main');
+const spanCollection = mainEl
+    ? Array.from(mainEl.querySelectorAll<HTMLElement>('[data-color]'))
+    : [];
 
 spanCollection.forEach((spanEl) => {
-    const colorValue = spanEl.textContent;
+    function paintBg() {
+        const colorValue = spanEl.textContent;
 
-function paintBg() {
-    const  colorValue = 
-    if (colorValue) { 
-        spanEl.style.setProperty('bacground-color', colorValue); 
-     
-}
+        spanEl.style.setProperty('background-color', colorValue);
+        setTimeout(() => {
+            spanEl.style.removeProperty('background-color');
+        }, 1_000);
+    }
 
- 
- 
-} 
-setTimeout(() => {
-    spanEl.removeEventListener('click',paintBg);
-  }, 1_000);
+    spanEl.addEventListener('click', paintBg);
+
+
+    setTimeout(() => {
+        spanEl.removeEventListener('click', paintBg);
+    }, 5_000);
 });
+
 
