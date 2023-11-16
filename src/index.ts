@@ -7,8 +7,11 @@ spanCollection.forEach((spanEl) => {
     const colorValue = spanEl.textContent;
 
    if (colorValue) { 
-  spanEl.addEventListener('click', () => {
-    spanEl.style.backgroundColor = colorValue;
-  }, { once: true });
+    const paintBg = () => {spanEl.style.backgroundColor = colorValue};
+     spanEl.addEventListener('click', paintBg);
+
+  setTimeout(() => {
+    spanEl.removeEventListener('click',paintBg);
+  }, 5_000);
 }
 });
