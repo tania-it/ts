@@ -6,12 +6,18 @@ const spanCollection = mainEl
 spanCollection.forEach((spanEl) => {
     const colorValue = spanEl.textContent;
 
-   if (colorValue) { 
-    const paintBg = () => {spanEl.style.backgroundColor = colorValue};
-     spanEl.addEventListener('click', paintBg);
-
-  setTimeout(() => {
-    spanEl.removeEventListener('click',paintBg);
-  }, 5_000);
+function paintBg() {
+    const  colorValue = 
+    if (colorValue) { 
+        spanEl.style.setProperty('bacground-color', colorValue); 
+     
 }
+
+ 
+ 
+} 
+setTimeout(() => {
+    spanEl.removeEventListener('click',paintBg);
+  }, 1_000);
 });
+
