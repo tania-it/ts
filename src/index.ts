@@ -1,6 +1,9 @@
 /*import { colorSpan } from './colorSpan';
 colorSpan(); */
 
+import { COLORS } from "./colors";
+import { createElementByColor } from "./createElementByColor";
+
 
 const mainEl = document.getElementById('main');
 /*const spanCollection = mainEl
@@ -17,6 +20,12 @@ spanCollection.forEach((spanEl) => {
     spanEl.addEventListener('click', paintBg);
  
 }); */
+const coloredElements = COLORS.map((color) => createElementByColor(color));
+
+for (const coloredElement of coloredElements) {
+    mainEl?.appendChild(coloredElement);
+}
+
 
 mainEl?.addEventListener('click', (event) => {
     const targetEl = event.target as HTMLElement;
