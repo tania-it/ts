@@ -27,3 +27,4 @@ mainEl?.addEventListener('click', (event) => {
     }
 
 })
+
