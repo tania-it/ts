@@ -23,8 +23,11 @@ mainEl?.addEventListener('click', (event) => {
     const coloredEl = targetEl.closest<HTMLElement>('[data-color]');
 
     if (coloredEl) {
-        coloredEl.style.setProperty('background-color', coloredEl.textContent);
+        const colorValue = coloredEl.getAttribute('data-color');
+        coloredEl.style.setProperty('background-color', colorValue);
     }
 
 })
+
+
 
