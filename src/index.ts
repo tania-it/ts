@@ -1,3 +1,7 @@
+import { colorSpan } from './colorSpan';
+colorSpan();
+
+/*
 const mainEl = document.getElementById('main');
 const spanCollection = mainEl
     ? Array.from(mainEl.querySelectorAll<HTMLElement>('[data-color]'))
@@ -19,6 +23,4 @@ spanCollection.forEach((spanEl) => {
     setTimeout(() => {
         spanEl.removeEventListener('click', paintBg);
     }, 5_000);
-});
-
-
+});*/
