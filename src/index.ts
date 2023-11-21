@@ -20,11 +20,20 @@ spanCollection.forEach((spanEl) => {
     spanEl.addEventListener('click', paintBg);
  
 }); */
+
+const fragment = document.createDocumentFragment();
+COLORS.forEach((color) => {
+    fragment.appendChild(createElementByColor(color));
+})
+mainEl?.appendChild(fragment);
+
 const coloredElements = COLORS.map((color) => createElementByColor(color));
 
-for (const coloredElement of coloredElements) {
+
+
+/*for (const coloredElement of coloredElements) {
     mainEl?.append(...coloredElements);
-}
+}*/
 
 
 mainEl?.addEventListener('click', (event) => {
