@@ -23,7 +23,7 @@ spanCollection.forEach((spanEl) => {
 const coloredElements = COLORS.map((color) => createElementByColor(color));
 
 for (const coloredElement of coloredElements) {
-    mainEl?.appendChild(coloredElement);
+    mainEl?.append(...coloredElements);
 }
 
 
