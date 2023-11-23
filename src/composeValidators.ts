@@ -1,4 +1,5 @@
 import { ValidatorFunction, nonEmptyArray, requiredText } from "./ValidatorFunction";
+import { ValidatorResult } from "./ValidatorResult";
 
 export function composeValidators<T>(...validators: ValidatorFunction<T>[]) : ValidatorFunction<T>{
     return (value: T) : ValidatorResult => {
@@ -20,3 +21,4 @@ const requiredFIO =  composeValidators (
 );
 
 requiredFIO ('Ivanov');
+
