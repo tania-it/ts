@@ -19,4 +19,4 @@ const requiredFIO =  composeValidators (
     (value) => value.length <= 50 ? null : {maxLength: true},
 );
 
-requiredFIO ('bla');
+requiredFIO ('Ivanov');
