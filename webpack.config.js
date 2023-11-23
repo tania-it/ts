@@ -10,7 +10,7 @@ module.exports = (_, flags) => {
         context: resolve(cwd(), './src'),
         devtool: 'source-map',
         entry: {
-            main: './index'
+            main: './form.ts'
         },
         output: {
             path: resolve(cwd(), './dist'),
