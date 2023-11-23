@@ -27,14 +27,12 @@ COLORS.forEach((color) => {
 })
 mainEl?.appendChild(fragment);
 
-const coloredElements = COLORS.map((color) => createElementByColor(color));
 
-
-
-/*for (const coloredElement of coloredElements) {
+/*const coloredElements = COLORS.map((color) => createElementByColor(color));
+for (const coloredElement of coloredElements) {
     mainEl?.append(...coloredElements);
-}*/
-
+}
+*/
 
 mainEl?.addEventListener('click', (event) => {
     const targetEl = event.target as HTMLElement;

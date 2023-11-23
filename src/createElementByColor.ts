@@ -4,6 +4,5 @@ export function createElementByColor(color: string): HTMLElement {
     el.setAttribute('data-color', color);
     el.textContent = color;
     
-
     return el;
 }
