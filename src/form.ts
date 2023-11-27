@@ -13,7 +13,7 @@ pizzaOrderForm?.addEventListener('submit', (event) => {
         //addons: formData.getAll ('addon'),
           addons: pizzaOrderForm.addon.value, 
 
-        //paymentType: formData.get ('paymentType'),
+        //paymentType: formData.get('paymentType'),
           paymentType: pizzaOrderForm.paymentType.value,    
 
         //customerName: String(formData.get('customerName')).trim(),
