@@ -15,7 +15,7 @@ export function composeValidators<T>(...validators: ValidatorFunction<T>[]) : Va
 }
 
 
-const requiredFIO =  composeValidators (
+const requiredFIO = composeValidators (
     requiredText,
     (value) => value.length <= 50 ? null : {maxLength: true},
 );
