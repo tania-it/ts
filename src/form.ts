@@ -13,9 +13,8 @@ pizzaOrderForm?.addEventListener('submit', (event) => {
         customerName: String(formData.get('customerName')).trim(),
         shippingAddress: String(formData.get('shippingAddress')).trim(),
     };
-    
-    console.log(pizzaOrder);
 
+    console.log(pizzaOrder);
 });
 
 
