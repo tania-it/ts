@@ -1,4 +1,4 @@
-import { ValidatorFunction, nonEmptyArray, requiredText } from "./ValidatorFunction";
+import { ValidatorFunction } from "./ValidatorFunction";
 import { ValidatorResult } from "./ValidatorResult";
 
 export function composeValidators<T>(...validators: ValidatorFunction<T>[]) : ValidatorFunction<T>{
@@ -13,12 +13,3 @@ export function composeValidators<T>(...validators: ValidatorFunction<T>[]) : Va
         return null;
     };
 }
-
-
-const requiredFIO = composeValidators (
-    requiredText,
-    (value) => value.length <= 50 ? null : {maxLength: true},
-);
-
-requiredFIO ('Ivanov');
-
