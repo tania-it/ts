@@ -23,13 +23,13 @@ export class FormValidator<Data extends object> {
             const errors: FormValidateResult<Data>[] = [];
 
           for (const [propertyName, value] of Object.entries(data)) {
-            const  validator = this.#validationMap.get(propertyName);
+            const validator = this.#validationMap.get(propertyName);
             
             if(validator) {
                 const result = validator(value);
 
                 if (result) {
-                    errors.push ({[propertyName]: result} as FormValidateResult<Data>);
+                    errors.push({[propertyName]: result} as FormValidateResult<Data>);
                 }
             }
           }  
