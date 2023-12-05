@@ -48,5 +48,13 @@ pizzaOrderForm?.addEventListener('submit', (event) => {
     console.log(errors); // выводим сообщение об ошибках
 });
 
+function buildTemplateString(text, data) {
+    return text.replace(/\{\{(\w+)\}\}/g, (match, key) => {
+		console.log(key);
+        return Object.hasOwn(data, key) ? String(data[key]) : match;
+    });
+} 
 
+let res = buildTemplateString( 'У вас {{count}} товаров в корзине', {count: 6});
+console.log(res);
 
