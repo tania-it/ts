@@ -48,8 +48,8 @@ pizzaOrderForm?.addEventListener('submit', (event) => {
     console.log(errors); // выводим сообщение об ошибках
 });
 
-function buildTemplateString(text, data) {
-    return text.replace(/\{\{(\w+)\}\}/g, (match, key) => {
+function buildTemplateString(text:string, data: any) {
+    return text.replace(/\{\{(\w+)\}\}/g, (match, key: string) => {
 		console.log(key);
         return Object.hasOwn(data, key) ? String(data[key]) : match;
     });

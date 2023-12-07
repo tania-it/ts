@@ -12,13 +12,14 @@ renderTasks(resultsElement, tasks);
 todoForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    const text = String(new FormData(todoForm).get('taskText') ?? '');
+    const formData = new FormData(todoForm);
+    const text = String(formData.get('taskText') ?? '');
 
     const task: Task = {
-        text,
+        //text,
+        text: text,
         datetime: new Date().toISOString(),
     };
-
 
     tasks.push(task);
     saveTasks(tasks);

@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: sans-serif;
-            font-size: 24px;
+            font-size: 14px;
             color: black;
             box-sizing: border-box;
             margin-top: 30px;
@@ -35,24 +35,23 @@
         #results {
             width: 300px;
             height: 200px;
-            display: flex;
-            flex-direction: row;
             margin-top: 20px;
             border: 1px solid black;
+        }
+        li {
+            display: block;
         }
     </style>
 </head>
 
 <body>
-    <form name="todo">
+    <form name="todo" method="POST">
         <label>
     <div class="form-row">
         <input class="input-item" type="text" name="taskText" required autofocus>
         </label>
         <button class="button-item" type="submit">Save</button>
+    </div>    
     </form>    
-    </div>
     <ul id="results"></ul>
-    </div>   
-
 </html>
