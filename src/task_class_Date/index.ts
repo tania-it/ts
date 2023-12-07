@@ -1,3 +1,6 @@
+import { getTasks, saveTasks } from "./storageUtils";
+import { renderTasks } from "./renderTasks";
+import { Task } from "./Task";
 
 const resultsElement = document.getElementById('results')!;
 const todoForm = document.forms.namedItem('todo')!;
@@ -14,7 +17,7 @@ todoForm.addEventListener('submit', (event) => {
     const task: Task = {
         text,
         datetime: new Date().toISOString(),
-    }
+    };
 
 
     tasks.push(task);

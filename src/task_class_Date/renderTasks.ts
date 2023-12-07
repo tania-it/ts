@@ -1,7 +1,9 @@
-import { Task } from './Task'
+import { Task } from './Task';
+
+const TASKS_EL = document.getElementById('results');
 
 export function renderTasks(root: HTMLElement, tasks: Task[]): void {
-    root.replaceChildren(tasks.reduce((fragment, task)) => {
+    root.replaceChildren(tasks.reduce((fragment, task) => {
         fragment.append(createTaskItem(task));
 
         return fragment;

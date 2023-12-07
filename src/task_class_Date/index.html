@@ -44,11 +44,15 @@
 </head>
 
 <body>
+    <form name="todo">
+        <label>
     <div class="form-row">
-        <input class="input-item" type="text" name="text" required autofocus autocomplete="off">
-        <button class="button-item" type="submit">OK</button>
+        <input class="input-item" type="text" name="taskText" required autofocus>
+        </label>
+        <button class="button-item" type="submit">Save</button>
+    </form>    
     </div>
-    <div id="results">
+    <ul id="results"></ul>
     </div>   
 
 </html>
