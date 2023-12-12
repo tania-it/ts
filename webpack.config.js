@@ -32,7 +32,6 @@ module.exports = (_, flags) => {
         },
         plugins: [
             new HTMLWebpackPlugin({
-                //template: './index.html',
                 template: './index.html',
                 inject: 'head',
                 scriptLoading: 'defer',

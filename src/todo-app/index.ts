@@ -15,7 +15,7 @@ tasksModel.addEventListener('change', () => {
 todoForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    const text = String(new FormData(todoForm).get('date') ?? '');
+    const text = String(new FormData(todoForm).get('taskText') ?? '');
     const dueDate = String(new FormData(todoForm).get('date') ?? '');
 
     tasksModel.createTask({
