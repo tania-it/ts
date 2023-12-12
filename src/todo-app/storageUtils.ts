@@ -1,4 +1,4 @@
-import { Task } from './Task';
+import { Task } from './models/Task';
 
 const STORAGE_TASKS_KEY = 'CW.TODO_TASKS';
 

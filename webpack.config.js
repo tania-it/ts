@@ -7,15 +7,15 @@ module.exports = (_, flags) => {
 
     return {
         mode: isProd ? 'production' : 'development',
-        context: resolve(cwd(), './src'),
+        context: resolve(cwd(), './src/todo-app'),
         devtool: 'source-map',
         entry: {
             //main: './form.ts'
-            main: './task_class_Date/index'
+            main: './index'
         },
         output: {
             //path: resolve(cwd(), './dist'),
-            path: resolve(cwd(), './dist/task_class_Date'),
+            path: resolve(cwd(), './dist/todo'),
             filename: '[name].[contenthash].js',
             clean: true,
         },
@@ -33,7 +33,7 @@ module.exports = (_, flags) => {
         plugins: [
             new HTMLWebpackPlugin({
                 //template: './index.html',
-                template: './task_class_Date/index.html',
+                template: './index.html',
                 inject: 'head',
                 scriptLoading: 'defer',
             }),

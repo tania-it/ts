@@ -1,4 +1,4 @@
-import { Task } from './Task';
+import { Task } from './models/Task';
 
 //const TASKS_EL = document.getElementById('results');
 
@@ -12,9 +12,9 @@ export function renderTasks(root: HTMLElement, tasks: Task[]): void {
     );
 }
 
-function createTaskItem({ datetime, text }: Task) {
+function createTaskItem({ createDate, text }: Task) {
     const li = document.createElement('li');
-    const formattedDate = new Date(datetime).toLocaleString('ru');
+    const formattedDate = new Date(createDate).toLocaleString('ru');
 
     li.innerHTML = `<span>${formattedDate}</span> <span>${text}</span>`;
 
