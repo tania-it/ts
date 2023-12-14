@@ -1,7 +1,7 @@
 import { AbstractStorage } from "./AbstractStorage";
-
 import { WithId } from "../models/WithId";
 import { Migrations } from "./Migration";
+
 
 export class DbStorage<Value extends { id: Id }, Id extends string | number> extends AbstractStorage<Value, Id, IDBDatabase> {
     readonly #dbname: string;
@@ -41,10 +41,18 @@ export class DbStorage<Value extends { id: Id }, Id extends string | number> ext
         throw new Error("Method not implemented.");
     }
     write(data: Omit<Value, "id"> & { id?: Id | undefined; }, id?: Id | undefined): Promise<Id> {
-        throw new Error("Method not implemented.");
+        const db = this.init();
+        db.then(res => {
+        let transaction = res.transaction(this.#storeName, 'readwrite');
+        transaction.objectStore(this.#storeName).add(data);
+        });
+       
+        //  throw new Error("Method not implemented.");
     }
     delete(id: Id): Promise<void> {
         throw new Error("Method not implemented.");
     }
 
 }
+
+
