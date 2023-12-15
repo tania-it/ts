@@ -1,5 +1,5 @@
 export interface Migration {
-    (transaction: IDBTransaction): void | Promise<void>;
+  (transaction: IDBTransaction): void | Promise<void>;
 }
 
-export type Migrations = [Migration, ... Migration[]]; // массив миграций
+export type Migrations = [Migration, ...Migration[]];
